@@ -54,3 +54,15 @@ kubectl describe deployment cloud-native-go
 
 ##See service
 kubectl get services
+
+##Scale Pods
+kubectl.exe scale deployment cloud-native-go --replicas=3 (number of replicas)
+
+##See Rollout History
+kubectl.exe rollout history deployment cloud-native-go
+
+##Update images in kubernetes
+kubectl.exe set image deployment cloud-native-go cloud-native-go=cloud-native-go:1.0.2-alpine
+
+##Rollback
+kubectl.exe rollout undo deployment cloud-native-go
