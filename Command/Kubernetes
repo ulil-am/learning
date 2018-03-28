@@ -1,0 +1,56 @@
+##Create new Pod
+kubectl create -f k8s-pod.yml
+
+##Get Pod
+kubectl get pod
+
+##Get Pod Description
+kubectl describe pod <pod-name>
+
+##Forward port (exp. from 8080 to 8080)
+kubectl port-forward cloud-native-go 8080:8080
+
+##Show Labels
+kubectl get pods --show-labels
+kubectl get pods -o wide -L env
+
+##Assign custom label (label hello)
+kubectl label pod cloud-native-go hello=world
+kubectl get pods -o wide -L hello
+
+##Overwrite label
+kubectl label pod cloud-native-go env=prod --overwrite
+
+###Namespace
+##Get Namespace
+kubectl get ns
+
+##Detail of each namespace
+kubectl get pods --namespace kube-system
+
+##Create namespace
+kubectl create -f k8s-namespace.yml
+(Create yml file first)
+
+##Create pod in specific namespace
+kubectl create -f k8s-pod.yml --namespace cloud-native-go
+kubectl get pods --namespace cloud-native-go
+
+##Delete namespace
+kubectl delete -f k8s-namespace.yml
+
+##Delete Pod
+kubectl delete pod cloud-native-go
+
+##Kubectl create
+kubectl create -f k8s-deployment.yaml
+kubectl get deployments,pods,rs
+
+##Apply changes
+kubectl apply -f k8s-deployment.yaml 
+
+##Describe
+kubectl describe deployment cloud-native-go
+
+##See service
+kubectl get services
