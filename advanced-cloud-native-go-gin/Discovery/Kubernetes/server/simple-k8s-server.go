@@ -7,14 +7,14 @@ import (
 )
 
 func main() {
-	http.HandleFunc("info", info)
+	http.HandleFunc("/info", info)
 	http.ListenAndServe(port(), nil)
 }
 
 func info(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("The /info endpoint is being called...")
 	w.WriteHeader(http.StatusOK)
-	fmt.Println(w, "Hello Kubernetes Discovery & Configuration")
+	fmt.Fprintf(w, "Hello Kubernetes Discovery & Configuration")
 }
 
 func port() string {

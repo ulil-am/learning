@@ -10,23 +10,23 @@ spec:
         io.kompose.service: simple-k8s-server
     spec:
       containers:
-        - name: simple-k8s-server
-          image: "simple-k8s-server:1.0.1"
-          ports:
-          - containerPort: 9090
-          env:
-          - name: PORT
-            value: "9090"
+      - name: simple-k8s-server
+        image: "simple-k8s-server:1.0.1"
+        ports:
+        - containerPort: 9090
+        env:
+        - name: PORT
+          value: "9090"
 
-          readinessProbe:
-            httpGet:
-              path: /info
-              port: 9090
-            initialDelaySeconds: 5
-            timeoutSeconds: 5
-          livenessProbe:
-            httpGet:
-              path: /info
-              port: 9090
-            initialDelaySeconds: 10
-            timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /info
+            port: 9090
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /info
+            port: 9090
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
