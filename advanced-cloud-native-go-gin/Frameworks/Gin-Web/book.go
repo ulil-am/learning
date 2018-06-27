@@ -6,7 +6,6 @@ import (
 	"net/http"
 )
 
-// Book type with Name, Author and ISBN
 type Book struct {
 	Title       string `json:"title"`
 	Author      string `json:"author"`
@@ -14,6 +13,9 @@ type Book struct {
 	Description string `json:"description,omitempty"`
 	//define the book
 }
+
+// Book type with Name, Author and ISBN
+// type Book bookStruct.Book
 
 var books = map[string]Book{
 	"0345391802": Book{Title: "The Hitchhiker's Guide to the Galaxy",

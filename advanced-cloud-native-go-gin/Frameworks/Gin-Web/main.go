@@ -7,6 +7,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// var ORM orm.Ormer
+
+// func init() {
+// 	models.ConnectToDb()
+// 	ORM = models.GetOrmObject()
+// }
+
 func main() {
 	engine := gin.Default()
 
